@@ -1,4 +1,8 @@
-Jogo elaborado como etapa de um bootcamp na DIO.
+### Veja online: 
+	https://amarildop1.github.io/jogo-da-cobrinha/
 
-Repositório original: 
+#### Jogo elaborado como etapa de um bootcamp na DIO.
+Feito utilizando HTML, CSS e JavaScript.
+
+##### Repositório original: 
 	https://github.com/SpruceGabriela/snake-the-game
