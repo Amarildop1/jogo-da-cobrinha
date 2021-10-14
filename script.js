@@ -13,19 +13,25 @@ let food ={
 }
 
 function criarBG(){
-    context.fillStyle = "lightgreen";
+    context.fillStyle = "gray";
     context.fillRect(0, 0, 16*box, 16*box); //desenha o retângulo usando x e y e a largura e altura setadas
 }
 
 function criarCobrinha (){
+    let placar = document.querySelector('#placar');
+
+    let pontuacao = -1;
     for(i = 0; i < snake.length; i++){
-        context.fillStyle = "green";
+        context.fillStyle = "black";
         context.fillRect(snake[i].x, snake[i].y, box, box);
+        pontuacao++;
     }
+    let pontos = `<p>Pontuação: ${pontuacao}</p>`
+    placar.innerHTML = pontos;
 }
 
 function drawFood (){
-    context.fillStyle = "red";
+    context.fillStyle = "blue";
     context.fillRect(food.x, food.y, box, box);
 }
 
