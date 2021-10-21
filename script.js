@@ -89,7 +89,16 @@ function iniciarJogo(){
 
 let jogo = setInterval(iniciarJogo, 100);
 
-function perdeu(){   
+function perdeu(){
+    let audio = document.querySelector('#audio');
+    audio.innerHTML = `
+        <audio autoplay>
+            <source src="horse.ogg" type="audio/ogg">
+            <source src="cavalo.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+    `;
+    
     let result = document.querySelector('#resultado');
-    result.innerHTML = ` Fim de Jogo! :( `;
+    result.innerHTML = ` Fim de Jogo! :(`;
 }
