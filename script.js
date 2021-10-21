@@ -1,5 +1,5 @@
 let canvas = document.getElementById("snake"); //criar elemento que irá rodar o jogo
-let context = canvas.getContext("2d"); //....
+let context = canvas.getContext("2d"); 
 let box = 32;
 let snake = []; //criar cobrinha como lista, já que ela vai ser uma série de coordenadas, que quando pintadas, criam os quadradinhos
 snake[0] ={
@@ -19,14 +19,15 @@ function criarBG(){
 
 function criarCobrinha (){
     let placar = document.querySelector('#placar');
-
     let pontuacao = -1;
+
     for(i = 0; i < snake.length; i++){
         context.fillStyle = "black";
         context.fillRect(snake[i].x, snake[i].y, box, box);
+
         pontuacao++;
     }
-    let pontos = `<p>Pontuação: ${pontuacao}</p>`
+    let pontos = `<p><span>Pontuação:</span> ${pontuacao}</p>`
     placar.innerHTML = pontos;
 }
 
@@ -35,7 +36,6 @@ function drawFood (){
     context.fillRect(food.x, food.y, box, box);
 }
 
-//quando um evento acontece, detecta e chama uma função
 document.addEventListener('keydown', update);
 
 function update(event){
@@ -51,11 +51,12 @@ function iniciarJogo(){
     if(snake[0].x < 0 && direction == 'left') snake[0].x = 16 * box;
     if(snake[0].y > 15*box && direction == "down") snake[0].y = 0;
     if(snake[0].y < 0 && direction == 'up') snake[0].y = 16 * box;
-    
+
     for(i = 1; i < snake.length; i++){
         if(snake[0].x == snake[i].x && snake[0].y == snake[i].y){
             clearInterval(jogo);
-            alert('Game Over :(');
+
+            perdeu();
         }
     }
 
@@ -72,7 +73,7 @@ function iniciarJogo(){
     if(direction == "down") snakeY += box;
 
     if(snakeX != food.x || snakeY != food.y){
-        snake.pop(); //pop tira o último elemento da lista
+        snake.pop(); //Tira o último elemento da lista para fazer andar
     }else{
         food.x = Math.floor(Math.random() * 15 +1) * box;
         food.y = Math.floor(Math.random() * 15 +1) * box;
@@ -83,7 +84,12 @@ function iniciarJogo(){
         y: snakeY
     }
 
-    snake.unshift(newHead); //método unshift adiciona como primeiro quadradinho da cobrinha
+    snake.unshift(newHead);
 }
 
 let jogo = setInterval(iniciarJogo, 100);
+
+function perdeu(){   
+    let result = document.querySelector('#resultado');
+    result.innerHTML = ` Fim de Jogo! :( `;
+}

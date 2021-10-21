@@ -1,9 +1,35 @@
 body{
+    font-family: monospace;
     height: 95vh;
     width: 95vw;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    color: rgb(0, 0, 0);
+    color: rgb(0, 0, 0);    
+}
+
+canvas{
+    box-shadow: 1px 1px 20px black;
+    border-radius: 1%;
+}
+
+h1{
+    text-shadow: 1px 1px 1px black;
+}
+
+#estatus{
+    display: flex;
+    justify-content: space-between;
+}
+#placar p{
+    font-size: 1rem;
+}
+#placar p span{
+    font-weight: 800;
+}
+
+#resultado{
+    font-weight: 700;
+    margin-left: 20px;
 }
