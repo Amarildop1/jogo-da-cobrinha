@@ -21,8 +21,6 @@ h1{
 #estatus{
     display: flex;
     justify-content: space-between;
-}
-#placar p{
     font-size: 1rem;
 }
 #placar p span{

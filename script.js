@@ -96,7 +96,7 @@ function perdeu(){
             <source src="cavalo.mp3" type="audio/mpeg">
         </audio>
     `;
-    
+
     let result = document.querySelector('#resultado');
-    result.innerHTML = ` Fim de Jogo! :(`;
+    result.innerHTML = ` <p> Fim de Jogo! :(</p>`;
 }
