@@ -93,9 +93,7 @@ function perdeu(){
     let audio = document.querySelector('#audio');
     audio.innerHTML = `
         <audio autoplay>
-            <source src="horse.ogg" type="audio/ogg">
             <source src="cavalo.mp3" type="audio/mpeg">
-            Your browser does not support the audio element.
         </audio>
     `;
     
